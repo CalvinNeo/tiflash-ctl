@@ -191,6 +191,9 @@ func concatRegionsWithSameTableID(allRegions, newRegions []pd.Region, tableID in
 		if lastTblID != tableID {
 			allWithInOneTable = false
 			break
+		} else {
+			fmt.Printf("Find Region %v in table %v\n",
+				lastRegionID, lastTblID)
 		}
 		allRegions = append(allRegions, region)
 	}
